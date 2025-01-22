@@ -13,7 +13,7 @@ class RezerwacjaIndywidualna(Subject):
         super().powiadomSubskrybentow()
 
     # Funkcja sprawdza czy podany atrybut istnieje, a następnie zmienia jego wartość na tą podaną w funkcji
-    def zmienRezerwacje(self, **kwargs):
+    def zmienDaneRezerwacji(self, **kwargs):
         for attr, value in kwargs.items():
             if value is not None and hasattr(self, attr):
                 setattr(self, attr, value)

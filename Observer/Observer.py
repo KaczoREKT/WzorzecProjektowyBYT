@@ -1,4 +1,3 @@
 class Observer:
-    def aktualizujInformacje(self, subject):
-        """Ta metoda musi zostać nadpisana przez klasy dziedziczące."""
+    def aktualizujInformacje(self):
         pass

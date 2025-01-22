@@ -13,4 +13,4 @@ class Subject:
 
     def powiadomSubskrybentow(self):
         for subskrybent in self.subskrybenci:
-            subskrybent.aktualizujInformacje(self)
+            subskrybent.aktualizujInformacje()
