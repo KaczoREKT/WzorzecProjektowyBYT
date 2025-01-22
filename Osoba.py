@@ -1,4 +1,4 @@
-from Observer.Observer import Observer
+from Observer import Observer
 
 
 class Osoba(Observer):
@@ -11,5 +11,4 @@ class Osoba(Observer):
         self.numer_tel = numer_tel
 
     def aktualizujInformacje(self, *args):
-        zmiany = ", ".join([f"{key}: {value}" for key, value in args])
-        print(f"{self.imie}! Dane dotyczące twojej rezerwacji zostały zmienione: {zmiany}")
+        print(f"{self.imie}! Dane dotyczące twojej rezerwacji zostały zmienione!")

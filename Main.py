@@ -1,6 +1,6 @@
 # main.py
-from Observer.Osoba import Osoba
-from Subject.RezerwacjaIndywidualna import RezerwacjaIndywidualna
+from Osoba import Osoba
+from RezerwacjaIndywidualna import RezerwacjaIndywidualna
 
 if __name__ == "__main__":
     # Tworzenie klientów
@@ -17,5 +17,6 @@ if __name__ == "__main__":
     rezerwacja.dodajSubskrybenta(osoba1)
 
     rezerwacja.zmienDaneRezerwacji(godzina_rozpoczecia ='13:00')
+    rezerwacja.powiadomSubskrybentow()
 
 
