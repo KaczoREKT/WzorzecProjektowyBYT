@@ -10,5 +10,6 @@ class Osoba(Observer):
         self.nazwisko = nazwisko
         self.numer_tel = numer_tel
 
-    def aktualizujInformacje(self):
-        print(f"{self.imie}! Dane dotyczące twojej rezerwacji zostały zmienione!")
+    def aktualizujInformacje(self, *args):
+        zmiany = ", ".join([f"{key}: {value}" for key, value in args])
+        print(f"{self.imie}! Dane dotyczące twojej rezerwacji zostały zmienione: {zmiany}")

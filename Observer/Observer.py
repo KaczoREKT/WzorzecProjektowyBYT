@@ -1,3 +1,3 @@
 class Observer:
-    def aktualizujInformacje(self):
+    def aktualizujInformacje(self, *args):
         pass
