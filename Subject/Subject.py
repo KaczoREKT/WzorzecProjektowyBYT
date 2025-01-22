@@ -1,15 +1,17 @@
-from abc import ABC, abstractmethod
+class Subject:
+    def __init__(self):
+        self.subskrybenci = []
+        self.poziom_zaawansowania = None  # Dodano atrybut z domyślną wartością
 
+    def dodajSubskrybenta(self, observer):
+        if observer not in self.subskrybenci:
+            self.subskrybenci.append(observer)
 
-class Subject(ABC):
-    @abstractmethod
-    def attach(self, observer):
-        pass
+    def usunSubskrybenta(self, observer):
+        if observer in self.subskrybenci:
+            self.subskrybenci.remove(observer)
 
-    @abstractmethod
-    def detach(self, observer):
-        pass
-
-    @abstractmethod
-    def notify(self):
-        pass
+    def powiadomSubskrybentow(self):
+        for subskrybent in self.subskrybenci:
+            if hasattr(subskrybent, "poziom_zaawansowania") and subskrybent.poziom_zaawansowania == self.poziom_zaawansowania:
+                subskrybent.aktualizujInformacje(self)

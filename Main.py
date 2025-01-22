@@ -1,21 +1,42 @@
-from App.ClientApp import ClientApp
-from App.TrainerApp import TrainerApp
+# main.py
 from Observer.Klient import Klient
-from Subject.Lekcja import Lekcja
+from Subject.Subject import Subject
+from Subject.Turniej import Turniej
 
 if __name__ == "__main__":
-    lekcja = Lekcja()
+    # Tworzenie subjectu
+    subject = Subject()
 
-    # Trainer GUI
-    trainer_app = TrainerApp(lekcja)
+    # Tworzenie klientów
+    klient1 = Klient(poziom_zaawansowania="1")
+    klient2 = Klient(poziom_zaawansowania="2")
 
-    # Client 1
-    klient1 = Klient("Klient 1")
-    lekcja.attach(klient1)
-    client_app1 = ClientApp(klient1)
+    # Dodawanie subskrybentów do subjectu
+    subject.dodajSubskrybenta(klient1)
+    subject.dodajSubskrybenta(klient2)
 
-    # Run GUIs
-    import threading
+    # Tworzenie turnieju (brak turniejów na początku)
+    turniej = Turniej(
+        data_rozpoczecia="2025-02-01",
+        data_zakonczenia="2025-02-10",
+        id=1,
+        maksymalna_ilosc_uczestnikow=20,
+        poziom_zaawansowania="",
+        regulamin="Regulamin turnieju..."
+    )
 
-    threading.Thread(target=trainer_app.run).start()
-    threading.Thread(target=client_app1.run).start()
+    # Symulacja: brak dostępnych turniejów
+    print("Brak dostępnych turniejów na poziomie 1.")
+
+    # Dodanie turnieju na poziomie 1
+    subject.poziom_zaawansowania = "1"
+    subject.powiadomSubskrybentow()
+
+    turniej2 = Turniej(
+        data_rozpoczecia="2025-02-01",
+        data_zakonczenia="2025-02-10",
+        id=1,
+        maksymalna_ilosc_uczestnikow=20,
+        poziom_zaawansowania="2",
+        regulamin="Regulamin turnieju..."
+    )

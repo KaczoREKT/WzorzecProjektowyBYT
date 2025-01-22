@@ -1,7 +1,4 @@
-from abc import ABC, abstractmethod
-
-
-class Observer(ABC):
-    @abstractmethod
-    def update(self, data):
+class Observer:
+    def aktualizujInformacje(self, subject):
+        """Ta metoda musi zostać nadpisana przez klasy dziedziczące."""
         pass
