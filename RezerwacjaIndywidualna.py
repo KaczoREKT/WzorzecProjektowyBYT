@@ -36,3 +36,4 @@ class RezerwacjaIndywidualna(Subject):
             self.powiadomSubskrybentow()
 
 
+

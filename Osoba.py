@@ -19,3 +19,4 @@ class Osoba(Observer):
               f"\nGodzina rozpoczęcia: {dane.godzina_rozpoczecia}"
               f"\nGodzina zakończenia {dane.godzina_zakonczenia}"
               f"\nPozdrawiamy!")
+

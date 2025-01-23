@@ -12,8 +12,11 @@ if __name__ == "__main__":
         nazwisko="Wyszomirski",
         numer_tel="987654321"
     )
-    # Tworzenie subjectu
-    rezerwacja = RezerwacjaIndywidualna("2025-01-01", "2025-01-01", "10:00", "12:00")
+    # Tworzenie instancji rezerwacji
+    rezerwacja = RezerwacjaIndywidualna("2025-01-01",
+                                        "2025-01-01",
+                                        "10:00",
+                                        "12:00")
     rezerwacja.dodajSubskrybenta(osoba1)
 
     rezerwacja.zmienDaneRezerwacji(godzina_rozpoczecia='8:00')
