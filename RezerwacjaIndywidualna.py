@@ -8,6 +8,7 @@ class RezerwacjaIndywidualna(Subject):
         self.data_zakonczenia = data_zakonczenia
         self.godzina_rozpoczecia = godzina_rozpoczecia
         self.godzina_zakonczenia = godzina_zakonczenia
+        self.subskrybenci = []
 
     def dodajSubskrybenta(self, observer):
         if observer not in self.subskrybenci:
@@ -19,12 +20,19 @@ class RezerwacjaIndywidualna(Subject):
 
     def powiadomSubskrybentow(self):
         for subskrybent in self.subskrybenci:
-            subskrybent.aktualizujInformacje()
+            subskrybent.aktualizujInformacje(self)
 
-    # Funkcja sprawdza czy podany atrybut istnieje, a następnie zmienia jego wartość na tą podaną w funkcji
+    # Użytkownik podaje nazwę atrybutu i jego nową wartość.
+    # Jeśli podany atrybut jest poprawny, wartość jest zmieniana na nową.
     def zmienDaneRezerwacji(self, **kwargs):
+        flag = False
         for attr, value in kwargs.items():
             if value is not None and hasattr(self, attr):
                 setattr(self, attr, value)
+                flag = True
+            else:
+                raise Exception("Podano złą nazwę atrybutu!")
+        if flag:
+            self.powiadomSubskrybentow()
 
 

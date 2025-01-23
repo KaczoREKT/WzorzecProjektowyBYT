@@ -1,7 +1,4 @@
 class Subject:
-    def __init__(self):
-        self.subskrybenci = []
-
     def dodajSubskrybenta(self, observer):
         """Dodaje subskrybenta do listy"""
         pass
